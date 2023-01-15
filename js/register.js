@@ -80,6 +80,7 @@ const emailValidation = () => {
     } else {
         successMesage(email)
         localStorage.setItem("email", email.value)
+        console.log("my love");
     }
 }
 
@@ -88,7 +89,7 @@ const passWordValidation = () => {
 
     if (passwordvalue === "") {
         errorMesage(passWord, "A valid password is required")
-    } else if (passWord.length > 8 || passWord.length < 15) {
+    } else if (passwordvalue.length > 8 || passwordvalue.length < 15) {
         errorMesage(passWord, "must between 8 and 15 characters must be unique")
     } else {
         successMesage(passWord)
@@ -114,10 +115,10 @@ const passWord2Validation = () => {
 
 //*******/ validation seconds setting******//
 
-userName.addEventListener("change", (e) => {
+userName.addEventListener("change", () => {
     setTimeout(() => usernameValidation(), 2000)
 })
-email.addEventListener("change", (e) => {
+email.addEventListener("change", () => {
     setTimeout(() => emailValidation(), 2000)
 })
 passWord.addEventListener("change", () => {
